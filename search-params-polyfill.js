@@ -3,6 +3,7 @@
  *
  * @author Jerry Bendy <jerry@icewingcc.com>
  * @licence MIT
+ * From : https://github.com/jerrybendy/url-search-params-polyfill
  *
  */
 
