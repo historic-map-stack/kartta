@@ -87,17 +87,17 @@ class ThreeDControl {
  * url -- any parameters present in the url and not present in params are left unchanged.
  */
 const updatePageUrl = (params) => {
-  const url = new URL(document.location);
+  const searchParams = new URLSearchParams(window.location.search);
   Object.keys(params).forEach(key => {
-    url.searchParams.set(key, params[key]);
+    searchParams.set(key, params[key]);
   });
   window.history.replaceState(
       null, '',
-      location.origin + location.pathname + '?' + url.searchParams.toString() + location.hash);
+      location.origin + location.pathname + '?' + searchParams.toString() + location.hash);
 };
 
 document.addEventListener("DOMContentLoaded", function(){
-  const params = (new URL(document.location)).searchParams;
+  const params = new URLSearchParams(window.location.search);
 
   let currentYear = params.has("year") ? parseInt(params.get("year")) : "1940";
 
