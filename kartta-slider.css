@@ -70,3 +70,21 @@
   border-radius: 7px;
   cursor: pointer;
 }
+
+
+.kartta-slider-container>input[type=range]::-ms-track {
+  background: #aaaaaa;
+  border: 0.2px solid #010101;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 14.1px;
+  cursor: pointer;
+}
+.kartta-slider-container>input[type=range]::-ms-thumb {
+  width: 16px;
+  height: 36px;
+  background: #777777;
+  border: 1px solid #000000;
+  border-radius: 7px;
+  cursor: pointer;
+} 
