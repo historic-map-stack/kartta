@@ -88,18 +88,22 @@ class ThreeDControl {
  */
 const updatePageUrl = (params) => {
   const url = new URL(document.location);
+  if (url.searchParams){
   Object.keys(params).forEach(key => {
     url.searchParams.set(key, params[key]);
   });
   window.history.replaceState(
       null, '',
       location.origin + location.pathname + '?' + url.searchParams.toString() + location.hash);
+  }
 };
 
 document.addEventListener("DOMContentLoaded", function(){
   const params = (new URL(document.location)).searchParams;
-
-  let currentYear = params.has("year") ? parseInt(params.get("year")) : "1940";
+  let currentYear = "1940";
+  if (params){
+    currentYear = params.has("year") ? parseInt(params.get("year")) : "1940";
+  }
 
   const styleURL = '{{ APP_HOME_URL }}/mbgl-antique-style.json';
 
